@@ -1,5 +1,17 @@
-.conteiner{
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+body {
     text-align: center;
+    
+}
+body h1{
+    font-family: 'Permanent Marker', cursive;
+}
+body .conteiner{
+    align-content: center;
     border: 1px solid black;
     border-radius: 10px;
+    width: 35%;
+    margin: 10% 25% 10% 25%;
 }
