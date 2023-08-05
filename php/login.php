@@ -6,9 +6,9 @@ include('../lib/php/protect.php');
 if (isset($_POST['email']) || isset($_POST['senha'])) {
 
     if(strlen($_POST['email']) == 0 ) {
-        echo "Preencha o campo E-mail.";
+       //echo "Preencha o campo E-mail.";
     } else if(strlen($_POST['senha']) == 0 ) {
-        echo "Preencha sua senha.";
+       //echo "Preencha sua senha.";
     } else {
 
         $email = $_POST['email'];
@@ -26,7 +26,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 
                     $_SESSION['usuario'] = $usuario['id'];
                     
-                    header("Location: php/index.php");
+                    header("Location: ../index.php");
             }else{
                 echo "Senha inválida";
             }
@@ -48,24 +48,23 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 </head>
 <body>
     <h1 id="titulo">Entrar</h1>
-    <main class="conteiner">
-        <div id="login">
-            <form action="" method="POST">
-                <p>
-                    <label for="">E-mail</label>
-                    <input type="text" name="email">
-                </p>
-                <p>
-                    <label for="">Senha</label>
-                    <input type="password" name="senha">
-                </p>
-                <p>
-                    <a style="margin-right:40px;" href="php/cadastro_usuario.php">Quero me Cadastrar.</a> 
-                    <a style="margin-right:40px;" href="php/Recupera_Senha.php">Esqueci minha Senha!</a> 
-                </p>
-                <button type="submit">Entrar</button>
-            </form>
-        </div>
+
+    <main class="conteiner">   
+        <form action="" method="POST">
+            <p>
+                <label for="">E-mail</label>
+                <input required type="text" name="email">
+            </p>
+            <p>
+                <label for="">Senha</label>
+                <input required type="password" name="senha">
+            </p>
+            <p>
+                <a style="margin-right:40px;" href="cadastro_usuario.php">Quero me Cadastrar.</a> 
+                <a style="margin-right:40px;" href="Recupera_Senha.php">Esqueci minha Senha!</a> 
+            </p>
+            <button type="submit">Entrar</button>
+        </form>
     </main>
 </body>
 </html>

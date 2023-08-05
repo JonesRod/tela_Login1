@@ -3,9 +3,9 @@ $msg = false;
 
 if(isset($_POST['nome']) || isset($_POST['email'])) {
 
-    include('lib/conexao.php');
-    include('lib/generateRandomString.php');
-    include('lib/enviarEmail.php');
+    include('lib/php/conexao.php');
+    include('lib/php/generateRandomString.php');
+    include('lib/php/enviarEmail.php');
 
     if(strlen($_POST['nome']) == 0 ) {
         $msg = "Preencha o campo do Nome.";
@@ -39,7 +39,7 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
                 <h1>Seja bem vindo " . $nome . "</h1>
                 <p><b>Seu E-mail de acesso é: </b> $email</p>
                 <p><b>Sua senha de acesso é: </b> $senha</p>
-                <p><b>Para redefinir sua senha </b><a href='redefinir_senha.php'>clique aqui.</a></p>
+                <p><b>Para redefinir sua senha </b><a href='../php/redefinir_senha.php'>clique aqui.</a></p>
                 <p><b>Para entrar </b><a href='login.php'>clique aqui.</a></p>");
 
                 unset($_POST);

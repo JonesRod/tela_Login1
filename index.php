@@ -1,11 +1,14 @@
 <?php
-include('lib/conexao.php');
+include('lib/php/conexao.php');
 
 if(!isset($_SESSION))
     session_start();
 
 if(!isset($_SESSION['usuario'])){
-    die("Você não pode acessar esta página porque não está logado.<p><a href=\"php/login.php\">Entrar</a></p>");
+    die("Entre como um usuario.  <a href=\"php/login.php\">Entrar</a>
+    <a href=''></a>
+    <a href=\"php/cadastro_usuario.php\">Me cadastrar</a>
+    ");
 }
 if(isset($_SESSION['email'])){
 
