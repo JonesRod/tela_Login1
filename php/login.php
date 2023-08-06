@@ -47,10 +47,9 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     <title>Entrar</title>
 </head>
 <body>
-    <h1 id="titulo">Entrar</h1>
-
     <main class="conteiner">   
         <form action="" method="POST">
+            <h1 id="titulo">Entrar</h1>
             <p>
                 <label for="">E-mail</label>
                 <input required type="text" name="email">
