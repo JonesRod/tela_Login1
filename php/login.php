@@ -1,15 +1,19 @@
 <?php
 
-include('../lib/php/conexao.php');
-include('../lib/php/protect.php');
+
 
 if (isset($_POST['email']) || isset($_POST['senha'])) {
 
     if(strlen($_POST['email']) == 0 ) {
-       //echo "Preencha o campo E-mail.";
+        header("Location: ../css/login.css");
+       echo "Preencha o campo E-mail.";
+
     } else if(strlen($_POST['senha']) == 0 ) {
-       //echo "Preencha sua senha.";
+
+       echo "Preencha sua senha.";
     } else {
+        include("../lib/troca_de_informacoesPHP/conexao.php");
+        include("../lib/troca_de_informacoesPHP/protect.php");
 
         $email = $_POST['email'];
         $senha = $_POST['senha'];
