@@ -1,7 +1,5 @@
 <?php
 
-
-
 if (isset($_POST['email']) || isset($_POST['senha'])) {
 
     if(strlen($_POST['email']) == 0 ) {
@@ -40,9 +38,8 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
     }   
 }
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,7 +49,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 </head>
 <body>
     <main class="conteiner">   
-        <form action="" method="POST">
+        <form action="logar.php" method="POST">
             <h1 id="titulo">Entrar</h1>
             <p>
                 <label for="">E-mail</label>
