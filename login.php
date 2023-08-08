@@ -31,7 +31,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 
                     $_SESSION['usuario'] = $usuario['id'];
                     
-                    //header("Location: ../index.php");
+                    header("Location: php/index.php");
             }else{
                 $msg= true;
                 $msg = "Senha inválida";

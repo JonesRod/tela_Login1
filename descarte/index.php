@@ -1,5 +1,5 @@
 <?php
-include('lib/php/conexao.php');
+include('../lib/php/conexao.php');
 
 if(!isset($_SESSION))
     session_start();
@@ -33,8 +33,8 @@ $usuario = $sql_query->fetch_assoc();
 <body>
    <p>Bem Vindo, <?php echo $usuario['nome']; ?></p>
     <p>
-        <a href="editar_dados_usuario.php">Editar dados do Usuario</a><br>
-        <a href="logout.php">Sair</a>
+        <a href="editar_dados_usuario.php">Meu Perfil</a><br>
+        <a href="../login.php">Sair</a>
     </p>
 </body>
 </html>

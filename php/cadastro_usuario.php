@@ -1,16 +1,19 @@
 <?php
+
 $msg = false;
 
 if(isset($_POST['nome']) || isset($_POST['email'])) {
 
-    include('lib/php/conexao.php');
-    include('lib/php/generateRandomString.php');
-    include('lib/php/enviarEmail.php');
+    include('../lib/php/conexao.php');
+    include('../lib/php/generateRandomString.php');
+    include('../lib/php/enviarEmail.php');
 
     if(strlen($_POST['nome']) == 0 ) {
+        $msg = true;
         $msg = "Preencha o campo do Nome.";
         echo $msg;
     }else if(strlen($_POST['email']) == 0 ) {
+        $msg = true;
         $msg = "Preencha ocampo E-mail.";
         echo $msg;
     } else {
@@ -44,10 +47,11 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
 
                 unset($_POST);
 
-                header("refresh: 5;login.php"); //aqui da o tempo de 5s e redireciona apagina
+                header("refresh: 5;../login.php"); //aqui da o tempo de 5s e redireciona apagina
             }
         }
         if(($registro ) != 0) {
+            $msg = true;
             $msg = "Já existe um Usuario cadastrado com esse e-mail!";
             echo $msg;
         }

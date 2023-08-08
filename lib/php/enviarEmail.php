@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 function enviar_email($destinatario, $assunto, $mensagemHTML)
 {
 
-    require 'vendor/autoload.php';
+    require '../vendor/autoload.php';
 
     $mail = new PHPMailer;
     $mail->isSMTP();
