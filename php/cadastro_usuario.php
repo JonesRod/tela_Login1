@@ -73,7 +73,7 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
             <input value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" name="email" type="email"><br>
         </p>
         <p>
-            <a href="login.php">Voltar para tela de login</a>
+            <a href="../login.php">Voltar para tela de login</a>
             <button type="submit">Cadastrar</button>
         </p>
     </form>
