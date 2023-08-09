@@ -13,16 +13,18 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
         $msg = "Preencha sua senha.";
 
     } else {
-        include("lib/troca_de_informacoesPHP/conexao.php");
-        include("lib/troca_de_informacoesPHP/protect.php");
 
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
+        include("lib/PHP/conexao.php");
+        include("lib/PHP/protect.php");
+
+        $email = $mysqli->escape_string($_POST['email']);//$mysqli->escape_string SERVE PARA PROTEGER O ACESSO 
+        $senha = $mysqli->escape_string($_POST['senha']);
 
         $sql_code = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";
         $sql_query =$mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
-        $quantidade = $sql_query->num_rows;
         $usuario = $sql_query->fetch_assoc();
+        $quantidade = $sql_query->num_rows;//retorna a quantidade encontrado
+
 
         if(($quantidade ) == 1) {
             if(password_verify($senha, $usuario['senha'])) {
@@ -30,7 +32,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
                     session_start();
 
                     $_SESSION['usuario'] = $usuario['id'];
-                    
+                    //$_SESSION['admin'] = $usuario['admin'];
                     header("Location: php/index.php");
             }else{
                 $msg= true;
@@ -71,8 +73,8 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
                 <input required type="password" name="senha">
             </p>
             <p>
-                <a style="margin-right:40px;" href="php/cadastro_usuario.php">Quero me Cadastrar.</a> 
-                <a style="margin-right:40px;" href="php/Recupera_Senha.php">Esqueci minha Senha!</a> 
+                <a style="margin-right:10px;" href="php/cadastro_usuario.php">Quero me Cadastrar.</a> 
+                <a style="margin-right:10px;" href="php/Recupera_Senha.php">Esqueci minha Senha!</a> 
             </p>
             <button type="submit">Entrar</button>
         </form>

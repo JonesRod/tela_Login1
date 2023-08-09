@@ -63,7 +63,7 @@ if(isset($_POST['email'])) {
             <label for="">Digite E-mail cadastrado</label>
             <input type="email" name="email">
         </p>
-        <a style="margin-right:40px;" href="login.php">< Voltar</a> 
+        <a style="margin-right:40px;" href="../login.php">Voltar</a> 
         <button type="submit">Enviar</button>
     </form>
 </body>

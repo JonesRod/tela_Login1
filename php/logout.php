@@ -5,7 +5,7 @@ if(!isset($_SESSION)) {
 }
 
 session_destroy();
-echo $_SESSION['id'];
-header("Location: login.php");
+//echo $_SESSION['id'];
+header("Location: ../login.php");
 
 ?>
