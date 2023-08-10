@@ -5,12 +5,7 @@ if(!isset($_SESSION))
     session_start();
 
 if(!isset($_SESSION['usuario'])){
-    /*header("Location: ../login.php");
-    die();*/
-    die("Entre como um usuario.  <a href=\"../login.php\">Entrar</a>
-    <a href=''></a>
-    <a href=\"cadastro_usuario.php\">Me cadastrar</a>
-    ");
+    header("Location: ../login.php");
 }
 if(isset($_SESSION['email'])){
 
@@ -38,10 +33,11 @@ $usuario = $sql_query->fetch_assoc();*/
     <title>Meu Site</title>
 </head>
 <body>
-   <p>Bem Vindo, <?php echo $usuario['nome']; ?></p>
+    <img src="" alt="">
     <p>
-        <a href="editar_dados_usuario.php">Meu Perfil</a><br>
+        <a href="perfil.php">Meu Perfil</a><a>Bem Vindo, <?php echo $usuario['nome']; ?></a><br>
         <a href="logout.php">Sair</a>
     </p>
+
 </body>
 </html>
