@@ -31,7 +31,7 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
             $senha_criptografada = password_hash($senha, PASSWORD_DEFAULT);
             $sql_code = "INSERT INTO usuarios (nome, email, senha, data) 
             VALUES('$nome','$email','$senha_criptografada', NOW())";
-            $deu_certo = $mysqli->query($sql_code) or die($mysqli->error);
+            $deu_certo = $mysqli->query($sql_code) or die($mysqli->$error);
 
             if($deu_certo){
 
@@ -43,7 +43,7 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
                 <p><b>Seu E-mail de acesso é: </b> $email</p>
                 <p><b>Sua senha de acesso é: </b> $senha</p>
                 <p><b>Para redefinir sua senha </b><a href='../php/redefinir_senha.php'>clique aqui.</a></p>
-                <p><b>Para entrar </b><a href='login.php'>clique aqui.</a></p>");
+                <p><b>Para entrar </b><a href='index.php'>clique aqui.</a></p>");
 
                 unset($_POST);
 
@@ -85,7 +85,7 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
             <input placeholder="Minimo 8 digitos" value="<?php if(isset($_POST['confSenha'])) echo $_POST['confSenha']; ?>" type="password" name="confSenha">
         </p>
         <p>
-            <a href="../login.php">Voltar para tela de login</a>
+            <a href="../index.php">Voltar para tela de login</a>
             <button type="submit">Cadastrar</button>
         </p>
     </form>

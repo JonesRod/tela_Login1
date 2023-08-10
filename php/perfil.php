@@ -80,7 +80,7 @@
             <input placeholder="Minimo 8 digitos" value="<?php if(isset($_POST['senha'])) echo $_POST['senha']; ?>" type="password" name="senha">
         </p>
         <p>
-            <a href="">Voltar</a>
+            <a href="home.php">Voltar</a>
             <button type="submit">Salvar</button>
         </p>
 </body>

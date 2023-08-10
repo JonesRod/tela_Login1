@@ -19,10 +19,6 @@ $id = $_SESSION['usuario'];
 $sql_query = $mysqli->query("SELECT * FROM usuarios WHERE id = '$id'") or die($mysqli->$error);
 $usuario = $sql_query->fetch_assoc();
 
-/*$id = $_SESSION['usuario'];
-$sql_usuario = "SELECT * FROM usuarios";
-$sql_usuario = $mysqli->query("SELECT * FROM usuarios WHERE id = '$id'") or die($mysqli->error);
-$usuario = $sql_query->fetch_assoc();*/
 ?>
 
 <!DOCTYPE html>

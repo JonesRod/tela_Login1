@@ -39,7 +39,7 @@ if (isset($_POST['email']) || isset($_POST['senhaAtual']))
         $novaSenha = $_POST['novaSenha'];
 
         $sql_code = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";
-        $sql_query =$mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
+        $sql_query =$mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->$error);
         $usuario = $sql_query->fetch_assoc();
         $quantidade = $sql_query->num_rows;//retorna a quantidade encontrado
 
@@ -59,7 +59,7 @@ if (isset($_POST['email']) || isset($_POST['senhaAtual']))
                 SET senha = '$nova_senha_criptografada'
                 WHERE email = '$email'";
 
-                $editado = $mysqli->query($sql_code) or die($mysqli->error);
+                $editado = $mysqli->query($sql_code) or die($mysqli->$error);
 
                 if($editado) 
                 {   
@@ -70,7 +70,7 @@ if (isset($_POST['email']) || isset($_POST['senhaAtual']))
                     <p><b>Seu E-mail de acesso é: </b> $email</p>
                     <p><b>Sua senha de acesso é: </b> $novaSenha</p>
                     <p><b>Para redefinir sua senha </b><a href='../php/redefinir_senha.php'>clique aqui.</a></p>
-                    <p><b>Para entrar </b><a href='login.php'>clique aqui.</a></p>");
+                    <p><b>Para entrar </b><a href='index.php'>clique aqui.</a></p>");
                     
                     unset($_POST);
 

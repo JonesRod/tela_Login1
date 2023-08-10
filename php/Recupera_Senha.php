@@ -32,17 +32,17 @@ if(isset($_POST['email'])) {
             <p>Uma nova senha foi definida para a sua conta.</p>
             <p><b>Nova senha: </b> $nova_senha</p>
             <p><b>Para redefinir sua senha </b><a href='redefinir_senha.php'>clique aqui.</a></p>
-            <p><b>Para entrar </b><a href='../login.php'>clique aqui.</a></p>");
+            <p><b>Para entrar </b><a href='../index.php'>clique aqui.</a></p>");
             
             $msg = "Você será redirecionado para a pagina de Login.";
             echo $msg;
-            header("refresh: 5; ../login.php");
+            header("refresh: 5; ../index.php");
             }    
         }
         if(($registro ) == 0) {
             $msg = "Não existe nenhum Usuario cadastrado com esse e-mail!";
             echo $msg;
-            header("refresh: 5; ../login.php");
+            header("refresh: 5; ../index.php");
         }
     }  
 }
@@ -63,7 +63,7 @@ if(isset($_POST['email'])) {
             <label for="">Digite E-mail cadastrado</label>
             <input type="email" name="email">
         </p>
-        <a style="margin-right:40px;" href="../login.php">Voltar</a> 
+        <a style="margin-right:40px;" href="../index.php">Voltar</a> 
         <button type="submit">Enviar</button>
     </form>
 </body>

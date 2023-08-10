@@ -34,7 +34,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
                     $_SESSION['usuario'] = $usuario['id'];
                     //$_SESSION['admin'] = $usuario['admin'];
                     unset($_POST);
-                    header("Location: php/index.php");
+                    header("Location: php/home.php");
             }else{
                 //$msg= true;
                 $msg = "Usúario ou Senha estão inválidos!";
