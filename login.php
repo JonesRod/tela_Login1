@@ -35,11 +35,11 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
                     //$_SESSION['admin'] = $usuario['admin'];
                     header("Location: php/index.php");
             }else{
-                $msg= true;
-                $msg = "Senha inválida";
+                //$msg= true;
+                $msg = "Usúario ou Senha estão inválidos!";
             }
         }else{
-            $msg= true;
+            //$msg= true;
             $msg = "O e-mail informado não esta correto ou não está cadastrado!";
         }
     }   
@@ -66,7 +66,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
             </span>
             <p>
                 <label id="email" for="">E-mail</label>
-                <input required type="text" name="email">
+                <input value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required type="text" name="email">
             </p>
             <p>
                 <label id="senha" for="">Senha</label>

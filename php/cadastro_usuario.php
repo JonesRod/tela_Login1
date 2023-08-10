@@ -27,7 +27,7 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
 
         if(($registro ) == 0) {
 
-            $senha = generateRandomString(8);
+            $senha = $_POST['confSenha'];
             $senha_criptografada = password_hash($senha, PASSWORD_DEFAULT);
             $sql_code = "INSERT INTO usuarios (nome, email, senha, data) 
             VALUES('$nome','$email','$senha_criptografada', NOW())";
@@ -75,6 +75,14 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
         <p>
             <label>E-mail:</label>
             <input value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" name="email" type="email"><br>
+        </p>
+        <p>
+            <label for="">Senha: </label>
+            <input placeholder="Minimo 8 digitos" value="<?php if(isset($_POST['senha'])) echo $_POST['senha']; ?>" type="password" name="senha">
+        </p>
+        <p>
+            <label for="">Confirmar Senha: </label>
+            <input placeholder="Minimo 8 digitos" value="<?php if(isset($_POST['confSenha'])) echo $_POST['confSenha']; ?>" type="password" name="confSenha">
         </p>
         <p>
             <a href="../login.php">Voltar para tela de login</a>
