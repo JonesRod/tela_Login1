@@ -8,6 +8,7 @@
     if(!isset($_SESSION['usuario'])){
         header("Location: ../login.php");
     }*/
+    $caminhoDaImagem= false;
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -19,7 +20,7 @@
 <body>
     <form method="POST" action="">
         <div>
-            <img src="" alt="">
+            <img src="<?php echo $caminhoDaImagem; ?>" alt="Sem Foto">
             <a href="">Editar</a>
         </div>    
         <p>
@@ -84,3 +85,4 @@
         </p>
 </body>
 </html>
+

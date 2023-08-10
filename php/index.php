@@ -16,7 +16,7 @@ if(isset($_SESSION['email'])){
 }
 
 $id = $_SESSION['usuario'];
-$sql_query = $mysqli->query("SELECT * FROM usuarios WHERE id = '$id'") or die($mysqli->error);
+$sql_query = $mysqli->query("SELECT * FROM usuarios WHERE id = '$id'") or die($mysqli->$error);
 $usuario = $sql_query->fetch_assoc();
 
 /*$id = $_SESSION['usuario'];
