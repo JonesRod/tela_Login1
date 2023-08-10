@@ -47,7 +47,7 @@ if(isset($_POST['nome']) || isset($_POST['email'])) {
 
                 unset($_POST);
 
-                header("refresh: 5;../login.php"); //aqui da o tempo de 5s e redireciona apagina
+                header("refresh: 5;../login.php"); //Atualiza a pagina em 5s e redireciona apagina
             }
         }
         if(($registro ) != 0) {

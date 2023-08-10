@@ -33,6 +33,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 
                     $_SESSION['usuario'] = $usuario['id'];
                     //$_SESSION['admin'] = $usuario['admin'];
+                    unset($_POST);
                     header("Location: php/index.php");
             }else{
                 //$msg= true;
@@ -72,7 +73,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
                 <label id="senha" for="">Senha</label>
                 <input required type="password" name="senha">
             </p>
-            <p>
+            <p> 
                 <a style="margin-right:10px;" href="php/cadastro_usuario.php">Quero me Cadastrar.</a> 
                 <a style="margin-right:10px;" href="php/Recupera_Senha.php">Esqueci minha Senha!</a> 
             </p>
