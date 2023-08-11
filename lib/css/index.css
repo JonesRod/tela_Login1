@@ -1,24 +1,52 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-/** {
+* {
     padding: 0px;
     margin: 0px;
 }
 body {
     text-align: center;
-    background-color: blueviolet;
+    background-color: #0d7a0e;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
     
 }
-body h1{
-    font-family: 'Permanent Marker', cursive;
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
 }
-body .conteiner{
+form#login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden; /*tudo que setiver fora da borda vai ficar escondido*/
+    background-color: white;
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+
+}
+/*body .conteiner{
     align-content: center;
     /*border: 1px solid black;*//*
     border-radius: 10px;
     width: 35%;
     margin: 10% 25% 10% 25%;
 }*/
+.conteiner #img{
+    background: #0d7a0e url(../../arquivos/IMG-20230811-WA0031.jpg);
+    background-size: cover;
+    height: 180px;
+
+}
+.conteiner h1{
+    font-family: 'Permanent Marker', cursive;
+    margin-top: 10px;
+    margin-bottom: 50px;
+
+
+}
